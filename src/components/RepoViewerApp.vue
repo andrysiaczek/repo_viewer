@@ -2,16 +2,21 @@
   <div class='container'>
     <div class='header'>
       <h1>RepoViewer</h1>
+      <h5>See what others coded so far</h5>
       <!-- <img src='src/assets/git-repository-logo.png' alt='git logo' /> -->
     </div>
     <form class='form'>
-      <label for='username'>Username: </label>
+      <label for='username'>Enter username: </label>
       <input id='username' v-model='username' type='text' name='username'>
+      <button @click='request = true'>View</button>
     </form>
     <div class='content'>
       <Repositories v-if='!loading && !notFound' :repos='repos'/>
       <span v-if='!loading && notFound'>
         <p>This user doesn't exist on GitHub</p>
+      </span>
+      <span v-if='error && !notFound'>
+        <p>Some error occured. Try again later.</p>
       </span>
     </div>
   </div>
@@ -29,20 +34,16 @@ export default {
       return {
         username: null,
         repos: null,
-        sortedRepos: null,
         loading: true,
         error: false,
         notFound: false,
+        request: true,
       }
     },
     watch: {
       username() {
         this.loading = true;
-        if (this.username.length === 0){
-          this.notFound = false;
-          this.error = false;
-        }
-        else {
+        if (this.username.length != 0 && this.request){
           axios
           .get('https://api.github.com/users/' + this.username + '/repos')
           .then(res => {
@@ -69,26 +70,39 @@ export default {
     flex-direction: column;
     width: 100%;
     background-color: whitesmoke;
+    min-height: 100%;
   }
 
   .header {
     padding: 60px;
     background-color: rgb(24, 25, 33);
-    color: thistle;
+    color: rgb(80, 210, 214);
     width: 100%;
     align-self: flex-start;
   }
 
   .form {
-    background-color: rgba(120, 114, 196, 0.453);
+    background-color: rgb(107, 220, 224);
+    color: rgb(24, 25, 33);
     width: 100%;
     padding: 20px;
-    display: grid;
+    display: flex;
+    flex-direction: column;
+  }
+
+  input[type=text] {
+    background-color: rgb(24, 25, 33);
+    color: white;
+    text-align: center;
   }
 
   .content {
-    background-color: rgb(255, 255, 255);
     width: 100%;
     padding: 20px;
+  }
+
+  button {
+    background-color: rgb(24, 25, 33);
+    color: rgb(80, 210, 214);
   }
 </style>

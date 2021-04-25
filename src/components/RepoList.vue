@@ -7,7 +7,7 @@
                 <th scope='col'>Stars</th>
             </tr>
             </thead>
-            <tbody >
+            <tbody>
             <tr v-for='repo in sort(repos)' :key='repo.id'> 
                 <th scope='row'>{{repo.name}}</th>
                 <td>{{repo.stargazers_count}}</td>
@@ -34,32 +34,8 @@ export default {
 </script>
 
 <style>
-    .row {
-        display:-ms-flexbox;
-        display:flex;-ms-flex-wrap:wrap;
-        flex-wrap:wrap;
-        margin-right:-15px;
-        margin-left:-15px
-    }
-
-    .table {
-        width:100%;
-        margin-bottom:1rem;
-        color:#212529
-    }
-    
-    .table td, .table th {
-        padding:.75rem;
-        vertical-align:top;
-        border-top:1px solid #dee2e6
-    }
-    
-    .table thead th {
-        vertical-align:bottom;
-        border-bottom:2px solid #dee2e6
-    }
-    
-    .table tbody + tbody {
-        border-top:2px solid #dee2e6
+    tbody tr:hover {
+        background-color: rgb(24, 25, 33);
+        color: whitesmoke;
     }
 </style>
