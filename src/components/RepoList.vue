@@ -9,8 +9,8 @@
             </thead>
             <tbody>
             <tr v-for='repo in sort(repos)' :key='repo.id'> 
-                <th scope='row'>{{repo.name}}</th>
-                <td>{{repo.stargazers_count}}</td>
+                <th scope='row'>{{ repo.name }}</th>
+                <td>{{ repo.stargazers_count }}</td>
             </tr>
             </tbody>
         </table>
@@ -37,5 +37,10 @@ export default {
     tbody tr:hover {
         background-color: rgb(24, 25, 33);
         color: whitesmoke;
+    }
+
+    .empty {
+        text-align: center;
+        align-self: center;
     }
 </style>
