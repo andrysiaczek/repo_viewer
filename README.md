@@ -1,4 +1,6 @@
 # RepoViewer
+---
+RepoViewer is an application that allows you to quickly browse repositories on GitHub created by specific users and sorted by popularity.
 
 ## Project setup
 ```
@@ -19,6 +21,3 @@ yarn build
 ```
 yarn lint
 ```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
