@@ -1,7 +1,6 @@
 # RepoViewer
 ---
 RepoViewer is an application that allows you to quickly browse repositories on GitHub created by specific users and sorted by popularity.
-
 To run the application, go to the main directory of the project and run the command:
 ```
 yarn serve
