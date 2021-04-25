@@ -1,6 +1,6 @@
 <template>
     <div>
-        <table class='table' v-if='repos && Object.keys(repos).length !== 0'>
+        <table class='table' v-if='repos && repos.length !== 0'>
             <thead>
             <tr>
                 <th scope='col'>Name</th>
@@ -14,7 +14,7 @@
             </tr>
             </tbody>
         </table>
-        <p class='empty' v-else-if='repos && Object.keys(repos).length === 0'>
+        <p class='empty' v-else>
                 User doesn't have any public repositories.
         </p>
     </div>  
