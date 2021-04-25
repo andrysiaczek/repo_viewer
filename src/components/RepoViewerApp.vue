@@ -36,7 +36,6 @@ export default {
         loading: true,
         error: false,
         notFound: false,
-        request: true,
       }
     },
     methods: {
@@ -44,7 +43,7 @@ export default {
         e.preventDefault();
 
         this.loading = true;
-        if (this.username.length != 0 && this.request){
+        if (this.username.length !== 0){
           axios
           .get('https://api.github.com/users/' + this.username + '/repos')
           .then(res => {
