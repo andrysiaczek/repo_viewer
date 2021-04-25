@@ -4,7 +4,7 @@
             <thead>
             <tr>
                 <th scope='col'>Name</th>
-                <th scope='col'>Stars</th>
+                <td scope='col'>Stars</td>
             </tr>
             </thead>
             <tbody>
