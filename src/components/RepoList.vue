@@ -14,9 +14,9 @@
             </tr>
             </tbody>
         </table>
-        <tbody v-else-if='repos && Object.keys(repos).length === 0'>
-                <tr>User doesn't have any public repositories.</tr>
-        </tbody>
+        <p class='empty' v-else-if='repos && Object.keys(repos).length === 0'>
+                User doesn't have any public repositories.
+        </p>
     </div>  
 </template>
 
