@@ -15,7 +15,7 @@
             </tbody>
         </table>
         <tbody v-else-if='repos && Object.keys(repos).length === 0'>
-                <tr>User doesn't have any repos.</tr>
+                <tr>User doesn't have any public repositories.</tr>
         </tbody>
     </div>  
 </template>
