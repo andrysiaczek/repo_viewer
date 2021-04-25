@@ -1,6 +1,6 @@
 <template>
     <div>
-        <table class='table' v-if='repos && Object.keys(repos).length != 0'>
+        <table class='table' v-if='repos && Object.keys(repos).length !== 0'>
             <thead>
             <tr>
                 <th scope='col'>Name</th>
