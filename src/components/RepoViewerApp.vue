@@ -3,12 +3,11 @@
     <div class='header'>
       <h1>RepoViewer</h1>
       <h5>See what others coded so far</h5>
-      <!-- <img src='src/assets/git-repository-logo.png' alt='git logo' /> -->
     </div>
     <form class='form'>
       <label for='username'>Enter username: </label>
       <input id='username' v-model='username' type='text' name='username'>
-      <button @click='request = true'>View</button>
+      <input type='submit' @click='processForm' value='View'>
     </form>
     <div class='content'>
       <Repositories v-if='!loading && !notFound' :repos='repos'/>
@@ -40,8 +39,10 @@ export default {
         request: true,
       }
     },
-    watch: {
-      username() {
+    methods: {
+      processForm(e) {
+        e.preventDefault();
+
         this.loading = true;
         if (this.username.length != 0 && this.request){
           axios
@@ -59,8 +60,8 @@ export default {
           })
           .finally( () => this.loading = false )
           }
-      },
-    },
+      }
+    }
 }
 </script>
 
@@ -101,7 +102,7 @@ export default {
     padding: 20px;
   }
 
-  button {
+  input[type=submit] {
     background-color: rgb(24, 25, 33);
     color: rgb(80, 210, 214);
   }
