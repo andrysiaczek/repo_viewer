@@ -44,7 +44,7 @@ export default {
           this.error = false;
         })
         .catch( error =>  {
-          if (error.response.status == "404") {
+          if (error.response.status === 404) {
             this.notFound = true;
           }
           this.error = true;
