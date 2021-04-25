@@ -1,27 +1,25 @@
 <template>
-  <div class='app'>
-    <h1>Git Repos App</h1>
-    <GitReposApp />
-  </div>
+  <RepoViewer class='app'/>
 </template>
 
 <script>
-import GitReposApp from './components/UserReposApp.vue'
+import RepoViewer from './components/RepoViewerApp.vue'
 
 export default {
   components: {
-    GitReposApp
+    RepoViewer
   }
 }
 </script>
 
 <style>
-.app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+  .app {
+    padding: 0;
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: #2c3e50;
+    height: 100%;
+  }
 </style>
