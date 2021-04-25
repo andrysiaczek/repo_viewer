@@ -1,4 +1,4 @@
-# vueapp
+# RepoViewer
 
 ## Project setup
 ```
